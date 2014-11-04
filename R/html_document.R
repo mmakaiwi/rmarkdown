@@ -109,6 +109,8 @@ html_document <- function(toc = FALSE,
                           number_sections = FALSE,
                           fig_width = 7,
                           fig_height = 5,
+                          fig_device = 'png',
+                          fig_dpi = 96,
                           fig_retina = if (!fig_caption) 2,
                           fig_caption = FALSE,
                           smart = TRUE,
@@ -183,7 +185,7 @@ html_document <- function(toc = FALSE,
 
   # return format
   output_format(
-    knitr = knitr_options_html(fig_width, fig_height, fig_retina, keep_md),
+    knitr = knitr_options_html(fig_width, fig_height, fig_device, fig_dpi, fig_retina, keep_md),
     pandoc = pandoc_options(to = "html",
                             from = from_rmarkdown(fig_caption),
                             args = args),
@@ -212,10 +214,10 @@ html_document <- function(toc = FALSE,
 #' @seealso \link{knitr_options}, \link{output_format}
 #'
 #' @export
-knitr_options_html <- function(fig_width, fig_height, fig_retina, keep_md) {
+knitr_options_html <- function(fig_width, fig_height, fig_device, fig_dpi, fig_retina, keep_md) {
 
-  opts_chunk <- list(dev = 'png',
-                     dpi = 96,
+  opts_chunk <- list(dev = fig_device,
+                     dpi = fig_dpi,
                      fig.width = fig_width,
                      fig.height = fig_height,
                      fig.retina = fig_retina)
