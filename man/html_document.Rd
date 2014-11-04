@@ -4,11 +4,11 @@
 \title{Convert to an HTML document}
 \usage{
 html_document(toc = FALSE, toc_depth = 3, number_sections = FALSE,
-  fig_width = 7, fig_height = 5, fig_retina = if (!fig_caption) 2,
-  fig_caption = FALSE, smart = TRUE, self_contained = TRUE,
-  theme = "default", highlight = "default", mathjax = "default",
-  template = "default", css = NULL, includes = NULL, keep_md = FALSE,
-  lib_dir = NULL, pandoc_args = NULL, ...)
+  fig_width = 7, fig_height = 5, fig_device = 'png, fig_dpi = 96,
+  fig_retina = if (!fig_caption) 2, fig_caption = FALSE, smart = TRUE,
+  self_contained = TRUE, theme = "default", highlight = "default",
+  mathjax = "default", template = "default", css = NULL,
+  includes = NULL, keep_md = FALSE, lib_dir = NULL, pandoc_args = NULL, ...)
 }
 \arguments{
 \item{toc}{\code{TRUE} to include a table of contents in the output}
@@ -18,6 +18,10 @@ html_document(toc = FALSE, toc_depth = 3, number_sections = FALSE,
 \item{number_sections}{\code{TRUE} to number section headings}
 
 \item{fig_width}{Default width (in inches) for figures}
+
+\item{fig_device}{Default device for figures (png by default)}
+
+\item{fig_dpi}{Default resolution (in dpi) for figures (96 by default)}
 
 \item{fig_height}{Default width (in inches) for figures}
 
